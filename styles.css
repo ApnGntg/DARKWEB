@@ -7,20 +7,25 @@
 
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 2rem;
     background-color: #333;
-    color: rgba(79, 143, 226, 0.884);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -31,6 +36,7 @@ header .cart button {
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 header .cart button:hover {
@@ -42,15 +48,22 @@ header .cart button:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .product {
     text-align: center;
-    border: 1px solid #f39c12;
+    border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
@@ -58,26 +71,33 @@ header .cart button:hover {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
 }
 
 .product h3 {
     margin: 1rem 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #2c3e50;
 }
 
 .product p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
 }
 
 .product button {
-    background-color: #0cff41f1;
+    background-color: #0cff41;
     border: none;
     padding: 10px 20px;
-    color: rgb(0, 0, 0);
+    color: #333;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .product button:hover {
@@ -95,6 +115,7 @@ header .cart button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.5s ease;
 }
 
 .modal-content {
@@ -103,10 +124,13 @@ header .cart button:hover {
     border-radius: 8px;
     width: 300px;
     text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .modal-content h2 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .modal-content button {
@@ -117,6 +141,7 @@ header .cart button:hover {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover {
@@ -130,4 +155,14 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
