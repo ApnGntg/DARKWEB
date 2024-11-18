@@ -1,0 +1,193 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Galaksi */
+#starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 70%, rgba(10, 10, 10, 0.7) 100%);
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: stars 60s infinite linear;
+    z-index: -1;
+}
+
+@keyframes stars {
+    0% { background-position: 0 0; }
+    100% { background-position: 10000px 10000px; }
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header .cart button {
+    background-color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header .cart button:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Product Grid */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.product {
+    text-align: center;
+    border: 2px solid #16a085;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background-color: rgba(22, 160, 133, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
+
+.product h3 {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.product p {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.product button {
+    background-color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #16a085;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+    background-color: #1abc9c;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.modal-content button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #c0392b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #111;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
