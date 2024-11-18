@@ -6,6 +6,13 @@ function addToCart(productName, price) {
     
     // Update jumlah item di keranjang
     document.getElementById('cart-count').textContent = cart.length;
+
+    // Animasi: Button 'Tambah ke Keranjang' muncul efek klik
+    const button = event.target;
+    button.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+        button.style.transform = 'scale(1)';
+    }, 200);
 }
 
 function viewCart() {
@@ -27,14 +34,14 @@ function viewCart() {
     });
 
     // Update total price
-    totalPriceElement.textContent = totalPrice;
+    totalPriceElement.textContent = totalPrice.toLocaleString();
 
     // Show modal
     modal.style.display = 'flex';
 }
 
 function closeCart() {
-    // Close modal
+    // Close modal dengan animasi fade-out
     const modal = document.getElementById('cart-modal');
     modal.style.display = 'none';
 }
